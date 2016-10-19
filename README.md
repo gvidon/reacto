@@ -35,3 +35,9 @@ If passed `<component path>/routes.js` file created.
 
 #### `--route-path`
 Path specified on root component of routes tree, which is `routes.js:<Route />`.
+
+### `class2function`
+*Not yet available*
+
+### `function2class`
+*Not yet available*
