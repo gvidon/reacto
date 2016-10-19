@@ -8,7 +8,7 @@ Simply install pypi package:
 pip install reacto
 ```
 
-CLI script will be deployed in some of your `bin/` directories, make sure it is listed in `$PATH`.
+CLI script will deploy into some of your `bin/` directories, make sure it is listed in `$PATH`.
 
 ## Component structure
 *To be edited*
