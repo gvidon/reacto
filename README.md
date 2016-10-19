@@ -15,7 +15,7 @@ CLI script will deploy into some of your `bin/` directories, make sure it is lis
 
 ## Available commands and options
 
-### `start_app`
+### `start_app [options] <app path>`
 *Not yet available*
 
 ### `start_component [options] <component path>`
