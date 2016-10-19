@@ -22,13 +22,13 @@ CLI script will deploy into some of your `bin/` directories, make sure it is lis
 Start new component. You can pass absolute/relative path or just compoentn name, in which case component will be created in current directory.
 
 #### `--actions`
-If passed `actions.js` file created.
+If passed `<component path>/actions.js` file created.
 
 #### `--no-flow`
 *To be edited*
 
 #### `--reducers`
-If passed `reducers.js` file created.
+If passed `<component path>/reducers.js` file created.
 
 #### `--routes`
-If passed `routes.js` file created.
+If passed `<component path>/routes.js` file created.
