@@ -16,7 +16,7 @@ CLI script will deploy into some of your `bin/` directories, make sure it is lis
 ## Available commands and options
 
 ### `start_app`
-*Not yet avialable*
+*Not yet available*
 
 ### `start_component [options] <component path>`
 Start new component. You can pass absolute/relative path or just compoentn name, in which case component will be created in current directory.
