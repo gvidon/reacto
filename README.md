@@ -1,6 +1,9 @@
-Reacto is a set of CLI commands to maintain react.js apps and components. It is mostly a wrapper around https://github.com/audreyr/cookiecutter with some additional features like adding additional parts (like actions or routes) into existing component.
+Reacto is a set of CLI commands to maintain react.js apps and components based on [specific structure](#component-structure). It is mostly a wrapper around https://github.com/audreyr/cookiecutter with some additional features like adding additional parts (like actions or routes) into existing component.
 
 The main reason why it is not an npm, but pypi package is that there is no cookiecutter port for node.js with non-CLI API.
+
+## Component structure
+*To be edited*
 
 ## Installation
 Simply install pypi package:
@@ -9,9 +12,6 @@ pip install reacto
 ```
 
 CLI script will deploy into some of your `bin/` directories, make sure it is listed in `$PATH`.
-
-## Component structure
-*To be edited*
 
 ## Available commands and options
 
