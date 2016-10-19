@@ -32,3 +32,6 @@ If passed `<component path>/reducers.js` file created.
 
 #### `--routes`
 If passed `<component path>/routes.js` file created.
+
+#### `route_path`
+Path specified on root component of routes tree, which is `routes.js:<Route />`.
