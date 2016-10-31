@@ -4,14 +4,19 @@ import os
 import re
 
 
-@click.command('start-component')
+@click.command('start-component', short_help='start new component')
 @click.argument('path')
-@click.option('--actions/--no-actions', default=False)
-@click.option('--flow/--no-flow', default=True)
-@click.option('--reducers/--no-reducers', default=False)
-@click.option('--routes/--no-routes', default=False)
-@click.option('--route-path', default='')
+@click.option('--actions/--no-actions', default=False, help='Add actions.js with empty actions set')
+@click.option('--flow/--no-flow', default=True, help='Create component in a Flow way, it means add type checking')
+@click.option('--reducers/--no-reducers', default=False, help='Add reducers.js with empty reducers set')
+@click.option('--routes/--no-routes', default=False, help='Add routes.js with empty routes set')
+@click.option('--route-path', default='', help='Add reducers.js with empty reducers set')
 def start_component(path, actions, flow, reducers, routes, route_path):
+	'''
+	Start new component
+
+	PATH is the component name or file system path. In the first case component will be created in current dir.
+	'''
 
 	# Get directory path where to put new component
 	dir = re.sub('[\w\d]+/?$', '.', path)
