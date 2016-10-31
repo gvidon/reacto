@@ -1,4 +1,4 @@
-Reacto is a set of CLI commands to maintain react.js apps and components based on [specific structure](#component-structure). It is mostly a wrapper around https://github.com/audreyr/cookiecutter with some additional features like adding additional parts (like actions or routes) into existing component.
+Reacto is a set of CLI commands to maintain react.js apps and components based on [specific structure](#component-structure) we use in ottofeller.com. It is mostly a wrapper around https://github.com/audreyr/cookiecutter with some additional features like adding additional parts (like actions or routes) into existing component.
 
 The main reason why it is not an npm, but pypi package is that there is no cookiecutter port for node.js with non-CLI API.
 
@@ -36,8 +36,8 @@ If passed `<component path>/routes.js` file created.
 #### `--route-path`
 Path specified on root component of routes tree, which is `routes.js:<Route />`.
 
-### `class2function`
+### `class2function [options] <component path>`
 *Not yet available*
 
-### `function2class`
+### `function2class [options] <component path>`
 *Not yet available*
