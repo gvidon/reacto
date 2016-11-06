@@ -25,7 +25,7 @@ Start new component. You can pass absolute/relative path or just compoentn name,
 If passed `<component path>/actions.js` file created.
 
 #### `--no-flow`
-*To be edited*
+Disable [FlowType](https://flowtype.org/) — do not apply its annotations.
 
 #### `--reducers`
 If passed `<component path>/reducers.js` file created.
