@@ -62,13 +62,11 @@ export const actionsTypes {
   REMOVE_ENTITY
 };
 
-export const addEntity = properties => {
-  return {
-    type: module.actionsTypes.ADD_ENTITY,
-    firstName: properties.firstName,
-    lastName: properties.lastName
-  }
-};
+export const addEntity = properties => ({
+  type     : module.actionsTypes.ADD_ENTITY,
+  firstName: properties.firstName,
+  lastName : properties.lastName
+});
 ```
 
 ### reducers.js
