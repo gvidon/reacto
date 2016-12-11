@@ -15,7 +15,7 @@ According to declared rules component dir includes following parts.
 ### assets/
 CSS/images/fonts — all related assets are placed there.
 
-### NestedComponentName/
+### SomeNestedComponent/
 Nested component dir name starts with capital letter.
 
 ### index.js
