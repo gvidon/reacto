@@ -12,13 +12,13 @@ Rules:
 
 According to declared rules component dir includes following parts.
 
-#### assets/
+### assets/
 CSS/images/fonts — all related assets are placed there.
 
-#### NestedComponentName/
+### NestedComponentName/
 Nested component dir name starts with capital letter.
 
-#### index.js
+### index.js
 Entry point of any component. Should export all of its parts and describe presentational view:
 * HTML structure of component
 * CSS imports
@@ -37,7 +37,7 @@ Parts of a component must be imported separately to make imports less heavy, not
 import {reducers as financialReducers} from 'Financial';
 ```
 
-#### routes.js
+### routes.js
 Routing to nested components, based on `react-router` library.
 
 ```javascript
@@ -56,7 +56,7 @@ export default () => { return (
 
 ```
 
-#### actions.js
+### actions.js
 Redux actions should be described as functions here. Also this file should include actions types constants.
 
 ```javascript
@@ -74,7 +74,7 @@ export const addContact = (properties) => {
 };
 ```
 
-#### reducers.js
+### reducers.js
 Reducers functions according to redux.
 
 ```javascript
