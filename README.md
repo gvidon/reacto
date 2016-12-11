@@ -62,10 +62,10 @@ export const actionsTypes {
   REMOVE_ENTITY
 };
 
-export const addEntity = properties => ({
-  type     : module.actionsTypes.ADD_ENTITY,
-  firstName: properties.firstName,
-  lastName : properties.lastName
+export const addEntity = payload => ({
+  type     : module.exports.actionsTypes.ADD_ENTITY,
+  firstName: payload.firstName,
+  lastName : payload.lastName
 });
 ```
 
