@@ -103,6 +103,13 @@ pip install reacto
 
 CLI script will deploy into some of your `bin/` directories, make sure it is listed in `$PATH`.
 
+## Usage
+Example, create compoentn `NewComponent` in the current dir:
+
+```shell
+reacto start-component --no-flow NewComponent
+```
+
 ## Available commands and options
 
 ### `start_app [options] <app path>`
