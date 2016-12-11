@@ -41,19 +41,16 @@ import {reducers as financialReducers} from 'Financial';
 Routing to nested components, based on `react-router` library.
 
 ```javascript
-// app/Sales/Contacts/routes.js
+// app/SomeComponent/routes.js
 import React from 'react';
-import { IndexRoute, Route } from 'react-router';
-import DetailsView from 'Sales/Contacts/Details';
-import ListView from 'Sales/Contacts/List';
+import {IndexRoute, Route} from 'react-router';
+import DetailsView from 'Entity/Details';
+import ListView from 'Entity/List';
 
-export default () => { return (
-	<Route path='contacts'>
-		<IndexRoute component={ListView}/>
-		<Route path='details/:id' component={DetailsView} />
-	</Route>
-); }
-
+export default () => <Route path='contacts'>
+	<IndexRoute component={ListView}/>
+	<Route path='details/:id' component={DetailsView} />
+</Route>
 ```
 
 ### actions.js
@@ -61,13 +58,13 @@ Redux actions should be described as functions here. Also this file should inclu
 
 ```javascript
 export const actionsTypes {
-  ADD_CONTACT,
-  REMOVE_CONTACT
+  ADD_ENTITY,
+  REMOVE_ENTITY
 };
 
-export const addContact = (properties) => {
+export const addEntity = properties => {
   return {
-    type: module.actionsTypes.ADD_CONTACT,
+    type: module.actionsTypes.ADD_ENTITY,
     firstName: properties.firstName,
     lastName: properties.lastName
   }
@@ -78,24 +75,24 @@ export const addContact = (properties) => {
 Reducers functions according to redux.
 
 ```javascript
-function contact(state, action) {
+function entity(state, action) {
   ({
-    ADD_CONTACT: () => {id: 1, firstName: action.firstName, lastName: action.lastName}
+    ADD_ENTITY: () => {id: 1, firstName: action.firstName, lastName: action.lastName}
   }[state] || () => state)()
 }
 
-function contacts(state, action) {
+function entities(state, action) {
   return ({
-    ADD_CONTACT: () => [
+    ADD_ENTITY: () => [
       ...state,
       contact(undefined, action)
     ],
 
-    REMOVE_CONTACT: () => _.reject(state, (C) => C.id === action.id)
+    REMOVE_ENTITY: () => _.reject(state, (C) => C.id === action.id)
   }[state] || () => state)()
 }
 
-export default contacts
+export default entities
 ```
 
 ## Installation
