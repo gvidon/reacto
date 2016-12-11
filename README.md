@@ -6,7 +6,7 @@ The main reason why it is not an npm, but pypi package is that there is no cooki
 Reacto declares app structure which is aimed to be easily scalable, with infinitely deep hierarchy of nested components.
 
 Rules:
-* each component named with camel case, like `SomeNestedComponent`
+* each component must be named with camel case, like `SomeNestedComponent`
 * each component structure is **the same**
 * non-components dirs must be named in lower case, using `-` as words separator.
 
