@@ -23,7 +23,7 @@ Put your types definitions into this dir. Put each type into one file in order t
 
 ### index.js
 Entry point of any component. Should export all of its parts and describe presentational view:
-Routing to nested components, based on `react-router` library.
+* Routing to nested components, based on `react-router v4` library
 * HTML structure of component
 * CSS imports
 * other assets import.
@@ -31,14 +31,13 @@ Routing to nested components, based on `react-router` library.
 View should be described/connected to redux in this file and **exported as default value**. This file should always be presented in each component.
 
 Other parts of component should be exported with name:
-* `routes` — routes related to the component
 * `reducers`
 * `actions`
 
 Parts of a component must be imported separately to make imports less heavy, not importing entire object including all its parts:
 
 ```javascript
-// app/SomeComponent/routes.js
+// app/SomeComponent/index.js
 import React from 'react';
 import DetailsView from 'Entity/Details';
 import ListView from 'Entity/List';
@@ -54,42 +53,8 @@ export default () => <Switch>
 ### actions.js
 Redux actions should be described as functions here. Also this file should include actions types constants.
 
-```javascript
-export const actionsTypes {
-  ADD_ENTITY,
-  REMOVE_ENTITY
-};
-
-export const addEntity = payload => ({
-  type     : module.exports.actionsTypes.ADD_ENTITY,
-  firstName: payload.firstName,
-  lastName : payload.lastName
-});
-```
-
 ### reducers.js
 Reducers functions according to redux.
-
-```javascript
-function entity(state, action) {
-  ({
-    ADD_ENTITY: () => {id: 1, firstName: action.firstName, lastName: action.lastName}
-  }[state] || () => state)()
-}
-
-function entities(state, action) {
-  return ({
-    ADD_ENTITY: () => [
-      ...state,
-      contact(undefined, action)
-    ],
-
-    REMOVE_ENTITY: () => _.reject(state, (C) => C.id === action.id)
-  }[state] || () => state)()
-}
-
-export default entities
-```
 
 ## Installation
 Simply install pypi package:
