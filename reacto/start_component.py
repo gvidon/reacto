@@ -2,6 +2,7 @@ import click
 from cookiecutter.main import cookiecutter
 import os
 import re
+import shutil
 
 
 @click.command('start-component', short_help='start new component')
@@ -46,6 +47,8 @@ def start_component(path, actions, flow, reducers, routes, route_path):
 
 	if not reducers:
 		os.remove('%s/%s/reducers.js' % (dir, name))
+	
+	if not flow:
+		shutil.rmtree('%s/%s/typedefs' % (dir, name))
 
 	click.secho('Created new component %s in %s' % (name, dir), fg='green')
-
