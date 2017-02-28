@@ -47,8 +47,5 @@ def start_component(path, actions, flow, reducers, routes, route_path):
 	if not reducers:
 		os.remove('%s/%s/reducers.js' % (dir, name))
 
-	if not routes:
-		os.remove('%s/%s/routes.js' % (dir, name))
-
 	click.secho('Created new component %s in %s' % (name, dir), fg='green')
 
