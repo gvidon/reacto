@@ -15,11 +15,15 @@ According to declared rules component dir includes following parts.
 ### assets/
 CSS/images/fonts — all related assets are placed there.
 
-### SomeNestedComponent/
-Nested component dir name starts with capital letter.
+### SomeComponent/
+Component dir name starts with capital letter.
+
+### typedefs/
+Put your types definitions into this dir. Put each type into one file in order to avoid having single big and purely maintainable file where all types are defined.
 
 ### index.js
 Entry point of any component. Should export all of its parts and describe presentational view:
+Routing to nested components, based on `react-router` library.
 * HTML structure of component
 * CSS imports
 * other assets import.
@@ -34,23 +38,17 @@ Other parts of component should be exported with name:
 Parts of a component must be imported separately to make imports less heavy, not importing entire object including all its parts:
 
 ```javascript
-import {reducers as financialReducers} from 'Financial';
-```
-
-### routes.js
-Routing to nested components, based on `react-router` library.
-
-```javascript
 // app/SomeComponent/routes.js
 import React from 'react';
-import {IndexRoute, Route} from 'react-router';
 import DetailsView from 'Entity/Details';
 import ListView from 'Entity/List';
+import {Route, Switch} from 'react-router-dom';
+export {default as reducers} from './reducers';
 
-export default () => <Route path='contacts'>
-	<IndexRoute component={ListView}/>
+export default () => <Switch>
+	<Route exact path='/' component={ListView} />
 	<Route path='details/:id' component={DetailsView} />
-</Route>
+</Switch>
 ```
 
 ### actions.js
