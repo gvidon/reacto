@@ -31,7 +31,7 @@ If passed `<component path>/actions.js` file created.
 If passed `<component path>/reducers.js` file created.
 
 #### `--routes`
-If passed `<component path>/routes.js` file created.
+If passed React Router 4 will be applied to `idex.js`.
 
 #### `--route-path`
 Path specified on root component of routes tree, which is `routes.js:<Route />`.

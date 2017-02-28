@@ -9,7 +9,7 @@ import re
 @click.option('--actions/--no-actions', default=False, help='Add actions.js with empty actions set')
 @click.option('--flow/--no-flow', default=True, help='Create component in a Flow way, it means add type checking')
 @click.option('--reducers/--no-reducers', default=False, help='Add reducers.js with empty reducers set')
-@click.option('--routes/--no-routes', default=False, help='Add routes.js with empty routes set')
+@click.option('--routes/--no-routes', default=False, help='Applies React Router 4 to `index.js')
 @click.option('--route-path', default='', help='Add reducers.js with empty reducers set')
 def start_component(path, actions, flow, reducers, routes, route_path):
 	'''
