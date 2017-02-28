@@ -44,10 +44,14 @@ import ListView from 'Entity/List';
 import {Route, Switch} from 'react-router-dom';
 export {default as reducers} from './reducers';
 
-export default () => <Switch>
-	<Route exact path='/' component={ListView} />
-	<Route path='details/:id' component={DetailsView} />
-</Switch>
+export default () => <div>
+	<h1>This is Some Component title</h1>
+	
+	<Switch>
+		<Route exact path='/' component={ListView} />
+		<Route path='details/:id' component={DetailsView} />
+	</Switch>
+</div>;
 ```
 
 ### actions.js
