@@ -12,11 +12,11 @@ Rules:
 
 According to declared rules component dir includes following parts.
 
+### SomeNestedComponent/
+Nested component dir name starts with capital letter.
+
 ### assets/
 CSS/images/fonts — all related assets are placed there.
-
-### SomeComponent/
-Component dir name starts with capital letter.
 
 ### typedefs/
 Put your types definitions into this dir. Put each type into one file in order to avoid having single big and purely maintainable file where all types are defined.
