@@ -89,6 +89,9 @@ If passed `<component path>/actions.js` file created.
 #### `--no-flow`
 Disable [FlowType](https://flowtype.org/) — do not apply its annotations.
 
+#### `--dumb-type`
+Adding this flag will create dumb type file `typedefs/dumb.js` and import it from `index.js`.
+
 #### `--reducers`
 If passed `<component path>/reducers.js` file created.
 
