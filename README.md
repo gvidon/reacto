@@ -12,14 +12,18 @@ Rules:
 
 According to declared rules component dir includes following parts.
 
-### assets/
-CSS/images/fonts — all related assets are placed there.
-
 ### SomeNestedComponent/
 Nested component dir name starts with capital letter.
 
+### assets/
+CSS/images/fonts — all related assets are placed there.
+
+### typedefs/
+Put your types definitions into this dir. Put each type into one file in order to avoid having single big and purely maintainable file where all types are defined.
+
 ### index.js
 Entry point of any component. Should export all of its parts and describe presentational view:
+* Routing to nested components, based on `react-router v4` library
 * HTML structure of component
 * CSS imports
 * other assets import.
@@ -27,71 +31,34 @@ Entry point of any component. Should export all of its parts and describe presen
 View should be described/connected to redux in this file and **exported as default value**. This file should always be presented in each component.
 
 Other parts of component should be exported with name:
-* `routes` — routes related to the component
 * `reducers`
 * `actions`
 
 Parts of a component must be imported separately to make imports less heavy, not importing entire object including all its parts:
 
 ```javascript
-import {reducers as financialReducers} from 'Financial';
-```
-
-### routes.js
-Routing to nested components, based on `react-router` library.
-
-```javascript
-// app/SomeComponent/routes.js
+// app/SomeComponent/index.js
 import React from 'react';
-import {IndexRoute, Route} from 'react-router';
 import DetailsView from 'Entity/Details';
 import ListView from 'Entity/List';
+import {Route, Switch} from 'react-router-dom';
+export {default as reducers} from './reducers';
 
-export default () => <Route path='contacts'>
-	<IndexRoute component={ListView}/>
-	<Route path='details/:id' component={DetailsView} />
-</Route>
+export default () => <div>
+	<h1>This is Some Component title</h1>
+	
+	<Switch>
+		<Route exact path='/' component={ListView} />
+		<Route path='details/:id' component={DetailsView} />
+	</Switch>
+</div>;
 ```
 
 ### actions.js
 Redux actions should be described as functions here. Also this file should include actions types constants.
 
-```javascript
-export const actionsTypes {
-  ADD_ENTITY,
-  REMOVE_ENTITY
-};
-
-export const addEntity = payload => ({
-  type     : module.exports.actionsTypes.ADD_ENTITY,
-  firstName: payload.firstName,
-  lastName : payload.lastName
-});
-```
-
 ### reducers.js
 Reducers functions according to redux.
-
-```javascript
-function entity(state, action) {
-  ({
-    ADD_ENTITY: () => {id: 1, firstName: action.firstName, lastName: action.lastName}
-  }[state] || () => state)()
-}
-
-function entities(state, action) {
-  return ({
-    ADD_ENTITY: () => [
-      ...state,
-      contact(undefined, action)
-    ],
-
-    REMOVE_ENTITY: () => _.reject(state, (C) => C.id === action.id)
-  }[state] || () => state)()
-}
-
-export default entities
-```
 
 ## Installation
 Simply install pypi package:
