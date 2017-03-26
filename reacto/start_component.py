@@ -8,11 +8,12 @@ import shutil
 @click.command('start-component', short_help='start new component')
 @click.argument('path')
 @click.option('--actions/--no-actions', default=False, help='Add actions.js with empty actions set')
+@click.option('--dumb-type/--no-dumb-type', default=False, help='Create dumb flow.js type')
 @click.option('--flow/--no-flow', default=True, help='Create component in a Flow way, it means add type checking')
 @click.option('--reducers/--no-reducers', default=False, help='Add reducers.js with empty reducers set')
 @click.option('--routes/--no-routes', default=False, help='Applies React Router 4 to `index.js')
 @click.option('--route-path', default='', help='Add reducers.js with empty reducers set')
-def start_component(path, actions, flow, reducers, routes, route_path):
+def start_component(path, actions, dumb_type, flow, reducers, routes, route_path):
 	'''
 	Start new component
 
@@ -29,6 +30,7 @@ def start_component(path, actions, flow, reducers, routes, route_path):
 		'gh:gvidon/cookiecutter-reacto-component',
 
 		extra_context={
+			'add_dumb_type' : dumb_type,
 			'add_flow'      : flow,
 			'component_name': name,
 			'has_actions'   : actions,
@@ -48,7 +50,7 @@ def start_component(path, actions, flow, reducers, routes, route_path):
 	if not reducers:
 		os.remove('%s/%s/reducers.js' % (dir, name))
 	
-	if not flow:
+	if not (flow and dumb_type):
 		shutil.rmtree('%s/%s/typedefs' % (dir, name))
 
 	click.secho('Created new component %s in %s' % (name, dir), fg='green')
