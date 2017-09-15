@@ -69,7 +69,7 @@ pip install reacto
 CLI script will deploy into some of your `bin/` directories, make sure it is listed in `$PATH`.
 
 ## Usage
-Example, create compoentn `NewComponent` in the current dir:
+Example, create component `NewComponent` in the current dir:
 
 ```shell
 reacto start-component --no-flow NewComponent
@@ -81,7 +81,7 @@ reacto start-component --no-flow NewComponent
 *Not yet available*
 
 ### `start-component [options] <component path>`
-Start new component. You can pass absolute/relative path or just compoentn name, in which case component will be created in current directory.
+Start new component. You can pass absolute/relative path or just component name, in which case component will be created in current directory.
 
 #### `--actions`
 If passed `<component path>/actions.js` file created.
