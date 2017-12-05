@@ -19,7 +19,7 @@ Nested component dir name starts with capital letter.
 CSS/images/fonts — all related assets are placed there.
 
 ### typedefs/
-Put your types definitions into this dir. Put each type into one file in order to avoid having single big and purely maintainable file where all types are defined.
+Put your types definitions into this dir. Put each type into one file in order to avoid having single big and poorely maintainable file where all types are defined.
 
 ### index.js
 Entry point of any component. Should export all of its parts and describe presentational view:
