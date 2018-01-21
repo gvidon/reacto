@@ -77,9 +77,6 @@ reacto start-component --no-flow NewComponent
 
 ## Available commands and options
 
-### `start-app [options] <app path>`
-*Not yet available*
-
 ### `start-component [options] <component path>`
 Start new component. You can pass absolute/relative path or just component name, in which case component will be created in current directory.
 
