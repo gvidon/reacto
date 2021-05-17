@@ -93,7 +93,7 @@ Adding this flag will create dumb type file `typedefs/dumb.js` and import it fro
 If passed `<component path>/reducers.js` file created.
 
 #### `--routes`
-If passed React Router 4 will be applied to `idex.js`.
+If passed React Router 4 will be applied to `index.js`.
 
 #### `--route-path`
 Path specified on root component of routes tree, which is `routes.js:<Route />`.
